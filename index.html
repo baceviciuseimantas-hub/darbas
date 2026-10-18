@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse Genshin Impact characters and their details.">
+  <title>Genshin Characters</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Genshin Characters home">
+        <span class="brand-mark">✦</span>
+        <span> 
+          <small>CHARACTER LIST</small>
+        </span>
+      </a>
+
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#explore">Characters</a>
+      </nav>
+
+      <a class="api-link" href="https://genshin.jmp.blue"
+         target="_blank" rel="noopener noreferrer">
+        View API <span>↗</span>
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="explore-section" id="explore"
+               aria-labelledby="explore-title">
+
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Genshin characters</p>
+            <h2 id="explore-title">Characters</h2>
+          </div>
+
+          <p class="result-count" id="result-count">
+            Loading characters...
+          </p>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Search characters..."
+              autocomplete="off"
+            >
+          </label>
+
+          <div class="filters" id="element-filters"
+               aria-label="Filter by element">
+            <button class="filter-button active"
+                    data-element="all">All</button>
+          </div>
+        </div>
+
+        <div class="status-message" id="status-message" role="status">
+          Loading characters...
+        </div>
+
+        <div class="character-grid" id="character-grid"
+             aria-live="polite"></div>
+
+        <nav class="pagination" id="pagination"
+             aria-label="Character pages" hidden>
+          <button class="page-button" id="previous-page"
+                  type="button" aria-label="Previous page">←</button>
+          <span class="page-indicator" id="page-indicator"></span>
+          <button class="page-button" id="next-page"
+                  type="button" aria-label="Next page">→</button>
+        </nav>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Eimantas Bacevicius · GJS23</span>
+    </footer>
+
+  </div>
+
+  <dialog class="detail-dialog" id="detail-dialog">
+    <button class="close-button" id="close-dialog"
+            aria-label="Close character details">×</button>
+    <div id="detail-content"></div>
+  </dialog>
+</body>
+</html>
